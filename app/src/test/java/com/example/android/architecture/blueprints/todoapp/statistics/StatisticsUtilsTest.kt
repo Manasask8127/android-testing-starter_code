@@ -9,6 +9,7 @@ class StatisticsUtilsTest{
     @Test
     fun getActiveAndCompletedStats_noCompleted_returnsHundredZero() {
 
+
         // Create an active tasks (the false makes this active)
         val tasks = listOf<Task>(
             Task("title", "desc", isCompleted = false)
