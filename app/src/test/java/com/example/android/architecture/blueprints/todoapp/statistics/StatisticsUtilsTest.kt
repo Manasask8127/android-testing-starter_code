@@ -22,8 +22,10 @@ class StatisticsUtilsTest{
         assertEquals(result.activeTasksPercent, 100f)
     }
 
+
+    //subjectUnderTest_actionOrTnput_resultState() format
     @Test
-    fun getActiveAndCompletedStats_noCompleted_returnsfortySixty() {
+    fun getActiveAndCompletedStats_both_returnsfortySixty() {
 
         // Create an active tasks (the false makes this active)
         val tasks = listOf<Task>(
