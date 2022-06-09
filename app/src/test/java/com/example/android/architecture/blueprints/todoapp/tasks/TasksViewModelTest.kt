@@ -10,6 +10,7 @@ import org.hamcrest.CoreMatchers
 import org.hamcrest.CoreMatchers.not
 import org.hamcrest.CoreMatchers.nullValue
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,6 +20,15 @@ class TasksViewModelTest{
 
     @get:Rule
     val instantTaskExecutable=InstantTaskExecutorRule()
+
+    //used to avoid repetative initialization
+//    // Subject under test
+//    private lateinit var tasksViewModel: TasksViewModel
+//
+//    @Before
+//    fun setupViewModel() {
+//        tasksViewModel = TasksViewModel(ApplicationProvider.getApplicationContext())
+//    }
 
     @Test
     fun addNewTask_setsNewTaskEvent(){
