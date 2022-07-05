@@ -49,6 +49,8 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation 'androidx.test.ext:junit-ktx:1.1.3'
+    testImplementation project(path: ':app')
+    testImplementation project(path: ':app')
     kapt "androidx.room:room-compiler:$roomVersion"
 
     // Architecture Components
