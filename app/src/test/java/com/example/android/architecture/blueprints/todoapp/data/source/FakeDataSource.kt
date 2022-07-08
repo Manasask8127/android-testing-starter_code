@@ -12,7 +12,7 @@ class FakeDataSource(var tasks:MutableList<Task>?= mutableListOf()):TasksDataSou
     }
 
     override suspend fun getTasks(): Result<List<Task>> {
-        tasks.let { return Result.Success(ArrayList(it)) }
+        tasks?.let { return Result.Success(ArrayList(it)) }
         return Result.Error(Exception("Tasks not found"))
     }
 
