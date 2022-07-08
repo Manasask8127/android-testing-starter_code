@@ -14,6 +14,13 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.isChecked
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
+import org.hamcrest.core.IsNot.not
 
 @MediumTest
 @RunWith(AndroidJUnit4::class)
@@ -42,6 +49,17 @@ class TaskDetailFragmentAndroidTest {
         val bundle = TaskDetailFragmentArgs(activeTask.id).toBundle()
         launchFragmentInContainer<TaskDetailFragment>(bundle, R.style.AppTheme)
        // Thread.sleep(2000)
+
+        // THEN - Task details are displayed on the screen
+        // make sure that the title/description are both shown and correct
+        onView(withId(R.id.task_detail_title_text)).check(matches(isDisplayed()))
+        onView(withId(R.id.task_detail_title_text)).check(matches(withText("Active Task")))
+        onView(withId(R.id.task_detail_description_text)).check(matches(isDisplayed()))
+        onView(withId(R.id.task_detail_description_text)).check(matches(withText("AndroidX Rocks")))
+        // and make sure the "active" checkbox is shown unchecked
+        onView(withId(R.id.task_detail_complete_checkbox)).check(matches(isDisplayed()))
+        onView(withId(R.id.task_detail_complete_checkbox)).check(matches(not(isChecked())))
+
 
     }
 
