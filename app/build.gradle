@@ -118,6 +118,17 @@ dependencies {
 
     //material theme
     implementation 'com.google.android.material:material:1.2.0-alpha01'
+
+
+    //mockito libs
+    // Dependencies for Android instrumented unit tests
+    androidTestImplementation "org.mockito:mockito-core:$mockitoVersion"
+
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+
+    //mc
 }
 
 
