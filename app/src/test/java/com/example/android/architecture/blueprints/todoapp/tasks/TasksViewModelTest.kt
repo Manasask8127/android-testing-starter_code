@@ -16,6 +16,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
+import com.example.android.architecture.blueprints.todoapp.MainCoroutineRule
 
 import org.hamcrest.CoreMatchers
 import org.hamcrest.CoreMatchers.*
@@ -30,6 +31,7 @@ import org.junit.runner.RunWith
 
 class TasksViewModelTest{
 
+
     @get:Rule
     val instantTaskExecutable=InstantTaskExecutorRule()
 
@@ -38,21 +40,26 @@ class TasksViewModelTest{
 
     private lateinit var tasksViewModel:TasksViewModel
 
-    @ExperimentalCoroutinesApi
-    private val testDispatcher:TestCoroutineDispatcher= TestCoroutineDispatcher()
+//    @ExperimentalCoroutinesApi
+//    private val testDispatcher:TestCoroutineDispatcher= TestCoroutineDispatcher()
+//
+//    @ExperimentalCoroutinesApi
+//    @Before
+//    fun setupDispatcher() {
+//        Dispatchers.setMain(testDispatcher)
+//    }
+//
+//    @ExperimentalCoroutinesApi
+//    @After
+//    fun tearDownDispatcher() {
+//        Dispatchers.resetMain()
+//        testDispatcher.cleanupTestCoroutines()
+//    }
 
     @ExperimentalCoroutinesApi
-    @Before
-    fun setupDispatcher() {
-        Dispatchers.setMain(testDispatcher)
-    }
+    @Rule
+    var mainCoroutineRule:MainCoroutineRule=MainCoroutineRule()
 
-    @ExperimentalCoroutinesApi
-    @After
-    fun tearDownDispatcher() {
-        Dispatchers.resetMain()
-        testDispatcher.cleanupTestCoroutines()
-    }
 
     // Rest of class
     @Before
