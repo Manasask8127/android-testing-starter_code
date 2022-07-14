@@ -128,7 +128,8 @@ dependencies {
 
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
 
-    //mc
+    //architecture component testing library for instrumental test
+    androidTestImplementation "androidx.arch.core:core-testing:$archTestingVersion"
 }
 
 
