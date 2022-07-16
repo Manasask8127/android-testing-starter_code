@@ -48,6 +48,7 @@ android {
     testOptions {
         unitTests {
             includeAndroidResources = true
+            returnDefaultValues = true
         }
     }
 }
@@ -130,6 +131,9 @@ dependencies {
 
     //architecture component testing library for instrumental test
     androidTestImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+
+    //add the Espresso idling resource library:
+    implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
 }
 
 
